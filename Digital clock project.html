@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clock</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .kdhk {
+        position: absolute;
+        top: 200px;
+        left: 40%;
+        font-weight: 900;
+        padding: 40px 80px;
+        border: 3px solid skyblue;
+        background-color: rgb(0, 0, 0);
+        color: rgb(0, 255, 68);
+      }
+      .updown {
+        position: absolute;
+        top: 205px;
+        left: 41%;
+        z-index: 1000;
+        color: rgb(0, 255, 68);
+      }
+      h1 {
+        position: absolute;
+        top: 150px;
+        left: 42%;
+        border-bottom: 2px solid black;
+        color: green;
+      }
+      .kkt {
+        color: cyan;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <h1>Digital <span class="kkt">Clock</span></h1>
+  <div class="box">
+    <span class="updown">
+      <span id="month"></span> / <span id="date"></span> /
+      <span id="year"></span>
+      <span id="day"></span>
+    </span>
+    <span class="kdhk">
+      <span id="Hours"></span>: <span id="minit"></span>:
+      <span id="second"></span>: <span id="date"></span>
+    </span>
+  </div>
+
+  <body>
+    <script>
+      setInterval(() => {
+        var date = new Date();
+        var hours = (document.getElementById("Hours").innerHTML =
+          date.getHours());
+        var minit = (document.getElementById("minit").innerHTML =
+          date.getMinutes());
+        var second = (document.getElementById("second").innerHTML =
+          date.getSeconds());
+        var second = (document.getElementById("month").innerHTML =
+          date.getMonth());
+        var second = (document.getElementById("date").innerHTML =
+          date.getDate());
+        var second = (document.getElementById("year").innerHTML =
+          date.getFullYear());
+      }, 1000);
+    </script>
+  </body>
+</html>
